@@ -3,87 +3,300 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KVA Ghar Seva - Halena Ka Apna Repair & Service Desk</title>
+    <title>KVA Ghar Seva - Halena's Premium Home Luxury Desk</title>
+    
+    <!-- Google Fonts (Cinzel और Montserrat लग्जरी लुक के लिए) -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons के लिए -->
     <link rel="stylesheet" href="https://cloudflare.com">
+
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; scroll-behavior: smooth; }
-        :root { --primary-color: #0d47a1; --secondary-color: #ffeb3b; --dark-grey: #1a252f; --light-bg: #f4f7f6; --success-green: #2ecc71; }
-        body { background-color: var(--light-bg); color: var(--dark-grey); line-height: 1.6; }
-        header { background-color: var(--primary-color); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.12); }
-        .brand-identity { display: flex; align-items: center; gap: 12px; }
-        .brand-badge { background-color: var(--secondary-color); color: var(--primary-color); width: 45px; height: 45px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: 900; font-size: 1.3rem; }
-        .brand-name { color: #ffffff; font-size: 1.6rem; font-weight: 800; }
-        .brand-name span { color: var(--secondary-color); }
-        .call-now-anchor { background-color: var(--secondary-color); color: var(--primary-color); padding: 12px 24px; border-radius: 30px; text-decoration: none; font-weight: bold; display: flex; align-items: center; gap: 8px; }
-        .hero-banner { background: linear-gradient(rgba(13, 71, 161, 0.9), rgba(26, 37, 47, 0.88)), url('https://unsplash.com'); background-size: cover; background-position: center; color: #ffffff; text-align: center; padding: 100px 20px 120px 20px; clip-path: polygon(0 0, 100% 0, 100% 92%, 0% 100%); }
-        .hero-banner h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 20px; }
-        .hero-banner p { font-size: 1.25rem; margin-bottom: 40px; color: #e3f2fd; }
-        .hero-banner p span { color: var(--secondary-color); font-weight: bold; }
-        .action-trigger-btn { background-color: var(--secondary-color); color: var(--primary-color); font-size: 1.25rem; padding: 18px 45px; border: none; border-radius: 50px; cursor: pointer; font-weight: bold; box-shadow: 0 6px 20px rgba(255,235,59,0.4); }
-        .trust-grid-container { max-width: 1200px; margin: -60px auto 60px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; padding: 0 20px; }
-        .trust-badge-card { background-color: #ffffff; padding: 30px 25px; border-radius: 16px; text-align: center; box-shadow: 0 15px 35px rgba(0,0,0,0.07); border-top: 5px solid var(--primary-color); }
-        .trust-badge-card i { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 15px; }
-        .services-wrapper { max-width: 1200px; margin: 0 auto 90px auto; padding: 0 20px; text-align: center; }
-        .main-heading { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 12px; font-weight: 800; }
-        .sub-heading { color: #666; margin-bottom: 50px; }
-        .services-layout-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-        .service-interactive-card { background-color: #ffffff; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #eef2f5; display: flex; flex-direction: column; text-align: left; cursor: pointer; }
-        .card-graphic-holder { height: 180px; background-color: #e3f2fd; display: flex; justify-content: center; align-items: center; font-size: 4rem; color: var(--primary-color); }
-        .service-interactive-card:nth-child(2) .card-graphic-holder { background-color: #fffde7; color: #f57f17; }
-        .service-interactive-card:nth-child(3) .card-graphic-holder { background-color: #e8f5e9; color: #2e7d32; }
-        .service-interactive-card:nth-child(4) .card-graphic-holder { background-color: #f3e5f5; color: #6a1b9a; }
-        .card-details-area { padding: 25px; display: flex; flex-direction: column; flex-grow: 1; }
-        .card-details-area h3 { font-size: 1.3rem; margin-bottom: 12px; color: var(--dark-grey); }
-        .card-details-area p { color: #666; font-size: 0.95rem; margin-bottom: 25px; flex-grow: 1; }
-        .card-action-btn { background-color: var(--primary-color); color: #ffffff; border: none; padding: 14px; border-radius: 10px; font-weight: bold; width: 100%; font-size: 1rem; }
-        .booking-central-panel { background-color: #ffffff; max-width: 900px; margin: 0 auto 100px auto; border-radius: 24px; box-shadow: 0 20px 50px rgba(0,0,0,0.08); overflow: hidden; }
-        .panel-branding-header { background-color: var(--primary-color); color: #ffffff; padding: 35px 30px; text-align: center; }
-        .actual-booking-form { padding: 45px 40px; }
-        .form-layout-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px; margin-bottom: 30px; }
-        .interactive-form-group { display: flex; flex-direction: column; gap: 10px; }
-        .interactive-form-group label { font-weight: 700; color: var(--dark-grey); }
-        .interactive-form-group input, .interactive-form-group select, .interactive-form-group textarea { padding: 15px; border: 1px solid #ccd6dd; border-radius: 10px; font-size: 1rem; background-color: #fcfcfc; }
-        .live-pricing-panel { background-color: #fffde7; border-left: 6px solid #fbc02d; padding: 20px; border-radius: 8px; margin-bottom: 30px; display: none; }
-        .panel-alert-title { font-weight: bold; color: #f57f17; font-size: 1.1rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
-        .booking-submit-trigger { background-color: var(--success-green); color: white; font-size: 1.25rem; font-weight: bold; padding: 18px; border: none; border-radius: 10px; width: 100%; display: flex; justify-content: center; align-items: center; gap: 12px; cursor: pointer; }
-        footer { background-color: var(--dark-grey); color: #ffffff; text-align: center; padding: 50px 20px; border-top: 4px solid var(--primary-color); }
-        footer p { color: #94a3b8; }
-        footer .brothers-identity { color: var(--secondary-color); font-weight: 800; font-size: 1.25rem; margin-top: 5px; }
-        @media (max-width: 768px) { .hero-banner h1 { font-size: 2.2rem; } .form-layout-grid { grid-template-columns: 1fr; } }
+        /* --- ROYAL LUXURY CORE CONFIGURATION --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, h4, .cinzel-font {
+            font-family: 'Cinzel', serif;
+        }
+
+        :root {
+            --royal-blue: #0a192f;       /* Deep Luxury Navy */
+            --royal-gold: #d4af37;       /* Antique Metallic Gold */
+            --light-gold: #fcf8e3;       /* Premium Gold Cream Accent */
+            --premium-white: #ffffff;
+            --elegant-grey: #f4f6f9;
+            --dark-charcoal: #232b38;
+            --success-gold: #c5a028;
+            --luxury-shadow: 0 20px 40px rgba(10, 25, 47, 0.08);
+            --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        body {
+            background-color: var(--elegant-grey);
+            color: var(--dark-charcoal);
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        /* --- ROYAL HEADER WITH INTEGRATED LOGO --- */
+        header {
+            background-color: var(--royal-blue);
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 3px solid var(--royal-gold);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+        }
+        .royal-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .brand-titles h1 {
+            color: var(--premium-white);
+            font-size: 1.7rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            line-height: 1;
+        }
+        .brand-titles h1 span {
+            color: var(--royal-gold);
+        }
+        .brand-titles p {
+            color: #8892b0;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+        .elite-call-anchor {
+            background: linear-gradient(135deg, var(--royal-gold), #b89728);
+            color: var(--royal-blue);
+            padding: 14px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: var(--transition-smooth);
+            border: 1px solid var(--royal-gold);
+            box-shadow: 0 4px 15px rgba(212,175,55,0.2);
+        }
+        .elite-call-anchor:hover {
+            background: transparent;
+            color: var(--royal-gold);
+            box-shadow: 0 4px 20px rgba(212,175,55,0.4);
+            transform: translateY(-2px);
+        }
+
+        /* --- ELITE HERO BANNER --- */
+        .royal-hero {
+            background: linear-gradient(rgba(10, 25, 47, 0.92), rgba(35, 43, 56, 0.88)), url('https://unsplash.com');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--premium-white);
+            text-align: center;
+            padding: 140px 20px 160px 20px;
+            position: relative;
+        }
+        .royal-hero h2 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+            color: var(--premium-white);
+        }
+        .royal-hero h2 span {
+            color: var(--royal-gold);
+        }
+        .royal-hero p {
+            font-size: 1.35rem;
+            margin-bottom: 45px;
+            color: #a8b2d1;
+            max-width: 850px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+        }
+        .royal-cta-trigger {
+            background: transparent;
+            color: var(--royal-gold);
+            font-size: 1.1rem;
+            padding: 18px 50px;
+            border: 2px solid var(--royal-gold);
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: var(--transition-smooth);
+            text-decoration: none;
+            display: inline-block;
+        }
+        .royal-cta-trigger:hover {
+            background-color: var(--royal-gold);
+            color: var(--royal-blue);
+            box-shadow: 0 0 30px rgba(212,175,55,0.4);
+            transform: scale(1.03);
+        }
+
+        /* --- PRESTIGE TRUST PILLARS --- */
+        .prestige-container {
+            max-width: 1200px;
+            margin: -50px auto 80px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+        .prestige-card {
+            background-color: var(--royal-blue);
+            color: var(--premium-white);
+            padding: 40px 30px;
+            border-radius: 4px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            border: 1px solid rgba(212,175,55,0.2);
+            transition: var(--transition-smooth);
+        }
+        .prestige-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--royal-gold);
+        }
+        .prestige-card i {
+            font-size: 2.5rem;
+            color: var(--royal-gold);
+            margin-bottom: 20px;
+        }
+        .prestige-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        /* --- LUXURY SERVICES DESIGN --- */
+        .luxury-services-wrapper {
+            max-width: 1200px;
+            margin: 0 auto 100px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        .royal-heading {
+            font-size: 2.8rem;
+            color: var(--royal-blue);
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+        .royal-heading span {
+            color: var(--royal-gold);
+        }
+        .luxury-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
+        }
+        .luxury-service-card {
+            background-color: var(--premium-white);
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: var(--luxury-shadow);
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+        .luxury-service-card:hover {
+            transform: translateY(-12px);
+            border-color: var(--royal-gold);
+            box-shadow: 0 25px 50px rgba(10,25,47,0.15);
+        }
+        .luxury-graphic-box {
+            height: 200px;
+            background-color: var(--royal-blue);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 4.5rem;
+            color: var(--royal-gold);
+            border-bottom: 3px solid var(--royal-gold);
+        }
+        .luxury-body-content {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .luxury-body-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            color: var(--royal-blue);
+        }
+        .luxury-action-trigger {
+            background-color: var(--royal-blue);
+            color: var(--royal-gold);
+            border: 1px solid var(--royal-gold);
+            padding: 15px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            text-transform: uppercase;
+            transition: var(--transition-smooth);
+        }
+        .luxury-service-card:hover .luxury-action-trigger {
+            background-color: var(--royal-gold);
+            color: var(--royal-blue);
+        }
+
+        /* --- BOOKING PANEL (जो अधूरा था) --- */
+        .royal-booking-panel {
+            background-color: var(--royal-blue);
+            color: var(--premium-white);
+            padding: 60px 20px;
+            text-align: center;
+            border-top: 3px solid var(--royal-gold);
+        }
+        
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
+
+    <!-- Header -->
     <header>
-        <div class="brand-badge">KVA</div><div class="brand-name">Ghar<span>Seva</span></div></div>
-        <a href="tel:+918619508439" class="call-now-anchor"><i class="fa-solid fa-phone"></i> Desk Call</a>
-    </header>
-    <section class="hero-banner">
-        <h1>Halena Ki Apni Trusted Ghar Seva</h1>
-        <p>Bijli, Alvari, Paint, Ya Safai Ka Kaam Kharab Ho? <span>KVA Chaudhary Bhai Ghar Aakar Saste Mein Karenge Check!</span></p>
-        <button class="action-trigger-btn" onclick="snapToBookingPanel()">Seva Book Karein</button>
-    </section>
-    <section class="trust-grid-container">
-        <div class="trust-badge-card"><i class="fa-solid fa-shield-halved"></i><h4>Managed Marketplace</h4><p>Direct Mistri Se Koi Magajmari Nahi. Rate Aur Trust Hum Ensure Karenge.</p></div>
-        <div class="trust-badge-card"><i class="fa-solid fa-map-location-dot"></i><h4>5 KM Free Travel</h4><p>Halena Se 5 Kilometer Ke Area Me Aane Ka Koi Extra Petrol Charge Nahi.</p></div>
-        <div class="trust-badge-card"><i class="fa-solid fa-receipt"></i><h4>Fixed Inspection Fee</h4><p>Pehle Humara Banda Check Karke Fix Rate Batayega, Aap Haan Bolenge Tabhi Kaam.</p></div>
-    </section>
-    <section class="services-wrapper" id="services-hub">
-        <h2 class="main-heading">Humari Professional Services</h2>
-        <p class="sub-heading">Halena Aur Aaspaas Ke Area Ke Sabse Trusted Professionals Ab Ek Hi Platform Par</p>
-        <div class="services-layout-grid">
-            <div class="service-interactive-card" onclick="autoConfigureServiceSelect('Electrician & Motor Repair')">
-                <div class="card-graphic-holder"><i class="fa-solid fa-bolt"></i></div>
-                <div class="card-details-area"><h3>Electrician & Motor Winding</h3><p>Ghar Ki Wiring, Fan Fixing, Ya Pani Ki Motor Shop Par Pick-Drop Karke Repairing Ka Solid Kaam.</p><button class="card-action-btn">Book Karein</button></div>
-            </div>
-            <div class="service-interactive-card" onclick="autoConfigureServiceSelect('Alvari & Carpenter Work')">
-                <div class="card-graphic-holder"><i class="fa-solid fa-hammer"></i></div>
-                <div class="card-details-area"><h3>Alvari Aur Lakdi Ka Kaam</h3><p>Nayi Iron/Wooden Alvari Ka Setup, Modular Kitchen Framework, Kapaat Ya Purane Bed Ki Repairing.</p><button class="card-action-btn">Book Karein</button></div>
-            </div>
-            <div class="service-interactive-card" onclick="autoConfigureServiceSelect('Home Painting & Wall Care')">
-                <div class="card-graphic-holder"><i class="fa-solid fa-paint-roller"></i></div>
-                <div class="card-details-area"><h3>Ghar Ki Painting & Putty</h3><p>Deewaron Ki Nayi Chamak Ke Liye Putty Lagwana Ho, Decorative Paints Job Ya Pure Ghar Ka Paint Care.</p><button class="card-action-btn">Book Karein</button></div>
-            </div>
-            <div class="service-interactive-card" onclick="autoConfigureServiceSelect('Home Deep Cleaning')">
-                <div class="card-graphic-holder"><i class="fa-solid fa-broom"></i></div>
-                <div class="card-details-area"><h3>Ghar Ki Deep Cleaning</h3><p>Tyohaaron, Shaadi Ya Naya Ghar Shift Karte Waqt Complete Kitchen Aur Floors Ki Deep Cleaning.</p><button class="card-action-btn">Book Karein</button></div>
-            </div>
+        <div class="royal-brand">
+            <div class="brand-titles">
+                <h1>KVA <span>Ghar Seva</span></h1>
