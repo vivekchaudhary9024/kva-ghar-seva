@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KVA Ghar Seva - Halena Ka Apna Repair & Service Desk</title>
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; scroll-behavior: smooth; }
+        :root { --primary-color: #0d47a1; --secondary-color: #ffeb3b; --dark-grey: #1a252f; --light-bg: #f4f7f6; --success-green: #2ecc71; }
+        body { background-color: var(--light-bg); color: var(--dark-grey); line-height: 1.6; }
+        header { background-color: var(--primary-color); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.12); }
+        .brand-identity { display: flex; align-items: center; gap: 12px; }
+        .brand-badge { background-color: var(--secondary-color); color: var(--primary-color); width: 45px; height: 45px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: 900; font-size: 1.3rem; }
+        .brand-name { color: #ffffff; font-size: 1.6rem; font-weight: 800; }
+        .brand-name span { color: var(--secondary-color); }
+        .call-now-anchor { background-color: var(--secondary-color); color: var(--primary-color); padding: 12px 24px; border-radius: 30px; text-decoration: none; font-weight: bold; display: flex; align-items: center; gap: 8px; }
+        .hero-banner { background: linear-gradient(rgba(13, 71, 161, 0.9), rgba(26, 37, 47, 0.88)), url('https://unsplash.com'); background-size: cover; background-position: center; color: #ffffff; text-align: center; padding: 100px 20px 120px 20px; clip-path: polygon(0 0, 100% 0, 100% 92%, 0% 100%); }
+        .hero-banner h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 20px; }
+        .hero-banner p { font-size: 1.25rem; margin-bottom: 40px; color: #e3f2fd; }
+        .hero-banner p span { color: var(--secondary-color); font-weight: bold; }
+        .action-trigger-btn { background-color: var(--secondary-color); color: var(--primary-color); font-size: 1.25rem; padding: 18px 45px; border: none; border-radius: 50px; cursor: pointer; font-weight: bold; box-shadow: 0 6px 20px rgba(255,235,59,0.4); }
+        .trust-grid-container { max-width: 1200px; margin: -60px auto 60px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; padding: 0 20px; }
+        .trust-badge-card { background-color: #ffffff; padding: 30px 25px; border-radius: 16px; text-align: center; box-shadow: 0 15px 35px rgba(0,0,0,0.07); border-top: 5px solid var(--primary-color); }
+        .trust-badge-card i { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 15px; }
+        .services-wrapper { max-width: 1200px; margin: 0 auto 90px auto; padding: 0 20px; text-align: center; }
+        .main-heading { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 12px; font-weight: 800; }
+        .sub-heading { color: #666; margin-bottom: 50px; }
+        .services-layout-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .service-interactive-card { background-color: #ffffff; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #eef2f5; display: flex; flex-direction: column; text-align: left; cursor: pointer; }
+        .card-graphic-holder { height: 180px; background-color: #e3f2fd; display: flex; justify-content: center; align-items: center; font-size: 4rem; color: var(--primary-color); }
+        .service-interactive-card:nth-child(2) .card-graphic-holder { background-color: #fffde7; color: #f57f17; }
+        .service-interactive-card:nth-child(3) .card-graphic-holder { background-color: #e8f5e9; color: #2e7d32; }
+        .service-interactive-card:nth-child(4) .card-graphic-holder { background-color: #f3e5f5; color: #6a1b9a; }
+        .card-details-area { padding: 25px; display: flex; flex-direction: column; flex-grow: 1; }
+        .card-details-area h3 { font-size: 1.3rem; margin-bottom: 12px; color: var(--dark-grey); }
+        .card-details-area p { color: #666; font-size: 0.95rem; margin-bottom: 25px; flex-grow: 1; }
+        .card-action-btn { background-color: var(--primary-color); color: #ffffff; border: none; padding: 14px; border-radius: 10px; font-weight: bold; width: 100%; font-size: 1rem; }
+        .booking-central-panel { background-color: #ffffff; max-width: 900px; margin: 0 auto 100px auto; border-radius: 24px; box-shadow: 0 20px 50px rgba(0,0,0,0.08); overflow: hidden; }
+        .panel-branding-header { background-color: var(--primary-color); color: #ffffff; padding: 35px 30px; text-align: center; }
+        .actual-booking-form { padding: 45px 40px; }
+        .form-layout-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px; margin-bottom: 30px; }
+        .interactive-form-group { display: flex; flex-direction: column; gap: 10px; }
+        .interactive-form-group label { font-weight: 700; color: var(--dark-grey); }
+        .interactive-form-group input, .interactive-form-group select, .interactive-form-group textarea { padding: 15px; border: 1px solid #ccd6dd; border-radius: 10px; font-size: 1rem; background-color: #fcfcfc; }
+        .live-pricing-panel { background-color: #fffde7; border-left: 6px solid #fbc02d; padding: 20px; border-radius: 8px; margin-bottom: 30px; display: none; }
+        .panel-alert-title { font-weight: bold; color: #f57f17; font-size: 1.1rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+        .booking-submit-trigger { background-color: var(--success-green); color: white; font-size: 1.25rem; font-weight: bold; padding: 18px; border: none; border-radius: 10px; width: 100%; display: flex; justify-content: center; align-items: center; gap: 12px; cursor: pointer; }
+        footer { background-color: var(--dark-grey); color: #ffffff; text-align: center; padding: 50px 20px; border-top: 4px solid var(--primary-color); }
+        footer p { color: #94a3b8; }
+        footer .brothers-identity { color: var(--secondary-color); font-weight: 800; font-size: 1.25rem; margin-top: 5px; }
+        @media (max-width: 768px) { .hero-banner h1 { font-size: 2.2rem; } .form-layout-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="brand-badge">KVA</div><div class="brand-name">Ghar<span>Seva</span></div></div>
+        <a href="tel:+918619508439" class="call-now-anchor"><i class="fa-solid fa-phone"></i> Desk Call</a>
+    </header>
+    <section class="hero-banner">
+        <h1>Halena Ki Apni Trusted Ghar Seva</h1>
+        <p>Bijli, Alvari, Paint, Ya Safai Ka Kaam Kharab Ho? <span>KVA Chaudhary Bhai Ghar Aakar Saste Mein Karenge Check!</span></p>
+        <button class="action-trigger-btn" onclick="snapToBookingPanel()">Seva Book Karein</button>
+    </section>
+    <section class="trust-grid-container">
+        <div class="trust-badge-card"><i class="fa-solid fa-shield-halved"></i><h4>Managed Marketplace</h4><p>Direct Mistri Se Koi Magajmari Nahi. Rate Aur Trust Hum Ensure Karenge.</p></div>
+        <div class="trust-badge-card"><i class="fa-solid fa-map-location-dot"></i><h4>5 KM Free Travel</h4><p>Halena Se 5 Kilometer Ke Area Me Aane Ka Koi Extra Petrol Charge Nahi.</p></div>
+        <div class="trust-badge-card"><i class="fa-solid fa-receipt"></i><h4>Fixed Inspection Fee</h4><p>Pehle Humara Banda Check Karke Fix Rate Batayega, Aap Haan Bolenge Tabhi Kaam.</p></div>
+    </section>
+    <section class="services-wrapper" id="services-hub">
+        <h2 class="main-heading">Humari Professional Services</h2>
+        <p class="sub-heading">Halena Aur Aaspaas Ke Area Ke Sabse Trusted Professionals Ab Ek Hi Platform Par</p>
+        <div class="services-layout-grid">
+            <div class="service-interactive-card" onclick="autoConfigureServiceSelect('Electrician & Motor Repair')">
+                <div class="card-graphic-holder"><i class="fa-solid fa-bolt"></i></div>
+                <div class="card-details-area"><h3>Electrician & Motor Winding</h3><p>Ghar Ki Wiring, Fan Fixing, Ya Pani Ki Motor Shop Par Pick-Drop Karke Repairing Ka Solid Kaam.</p><button class="card-action-btn">Book Karein</button></div>
+            </div>
+            <div class="service-interactive-card" onclick="autoConfigureServiceSelect('Alvari & Carpenter Work')">
+                <div class="card-graphic-holder"><i class="fa-solid fa-hammer"></i></div>
+                <div class="card-details-area"><h3>Alvari Aur Lakdi Ka Kaam</h3><p>Nayi Iron/Wooden Alvari Ka Setup, Modular Kitchen Framework, Kapaat Ya Purane Bed Ki Repairing.</p><button class="card-action-btn">Book Karein</button></div>
+            </div>
+            <div class="service-interactive-card" onclick="autoConfigureServiceSelect('Home Painting & Wall Care')">
+                <div class="card-graphic-holder"><i class="fa-solid fa-paint-roller"></i></div>
+                <div class="card-details-area"><h3>Ghar Ki Painting & Putty</h3><p>Deewaron Ki Nayi Chamak Ke Liye Putty Lagwana Ho, Decorative Paints Job Ya Pure Ghar Ka Paint Care.</p><button class="card-action-btn">Book Karein</button></div>
+            </div>
+            <div class="service-interactive-card" onclick="autoConfigureServiceSelect('Home Deep Cleaning')">
+                <div class="card-graphic-holder"><i class="fa-solid fa-broom"></i></div>
+                <div class="card-details-area"><h3>Ghar Ki Deep Cleaning</h3><p>Tyohaaron, Shaadi Ya Naya Ghar Shift Karte Waqt Complete Kitchen Aur Floors Ki Deep Cleaning.</p><button class="card-action-btn">Book Karein</button></div>
+            </div>
